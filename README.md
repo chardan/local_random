@@ -1,11 +1,8 @@
-#local_random 
-
 **local_random** is a wrapper for the standard library's `<random>` facilities 
 that provides thread-local seeding and a straightforward interface suitiable for
 basic, non-cryptographic uses.
--------------
 
-###Mini-examples, generate a number between 0 and a maximum (inclusive):
+Mini-examples, generate a number between 0 and a maximum (inclusive):
 
 ``` c++
 #include "local_random"
@@ -25,34 +22,34 @@ int z = rng();
 function or function object has a thread-local engine that's seeded the
 first time it's used. Reads from the PRNG are mutex-guarded.
 
-###Features:
+Features:
 	- self-seeding (per-thread)
 	- thread-safe
 	- flexible parameters
 	- multiple interfaces (functions, classes)
 	- straightforward use
 
-###Dependencies:
+Dependencies:
 
-C++17
+`C++17`
 
-Catch2 if you want to build the tests.
+`Catch2` if you want to build the tests.
 
-###To build:
+To build:
 
 No build is necessary, the library is header only.
 
-###To build examples:
+To build examples:
 
 cd examples 
 make
 
-###To build tests:
+To build tests:
 
-The unit tests use Catch2. The Makefile looks for Catch2 in CATCH2_DIR, which
+The unit tests use `Catch2`. The Makefile looks for Catch2 in CATCH2_DIR, which
 defaults to "deps/Catch2/single_include" in the test directory.
 
-###A note on this project:
+A note on this project:
 
 This is a fork of a random library developed for Ceph. I was the original designer
 and implementer, but this project would not have been possible without generous 
